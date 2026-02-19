@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient("mongodb+srv://test:test@flask.nou3ado.mongodb.net/?appName=flask")
+client = MongoClient("mongodb://localhost:27017/")
 db = client.todoDB
 collection = db.items
 
@@ -15,3 +15,4 @@ def submit():
     }
     collection.insert_one(data)
     return "Saved Successfully"
+
